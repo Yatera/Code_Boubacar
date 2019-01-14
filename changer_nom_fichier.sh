@@ -55,7 +55,21 @@ for i in $var1 ; do let "var=var+1" ; echo mv "$i"  "${i/jpg/"$(printf "%04d\n" 
 ##autre manière de faire de..jp
 cd /home/cnumdev/httpd/htdocs/PNG/PFOLME3/2018.11.29.PFOLME3
 
+<<<<<<< Updated upstream
 for i in $var5 ; do echo mv $i $(echo $i | sed 's/CNAM_Clouet_//') ; done | head
+=======
+############## jp
+var5=$(ls *) ; echo $var5
+for i in $var5 ; do echo cp $i $(echo $i | sed 's/CNAM_Clouet_//') ; done
+
+j=0 ; for i in $var5 ; do let "j++" ; echo $i" "$j ; done
+
+############## 
+
+
+
+for i in $(seq -w 0001 1 0200) ; do echo cp $var5 $(echo $var5 |sed 's/2018/.T.95/' ) ; done 
+>>>>>>> Stashed changes
 
 mv x.jpg 140.jpg
 
