@@ -41,6 +41,23 @@ for i in $((var1/var2)); do echo $var3; done
 for i in $var1" "$var2 ; do $((var1/var2)); echo $i ; done
 
 
+var1=$(
+
+cat $var0
+iconv -c -f UTF-16 -t UTF-8
+grep -Eo 'TotalCharacters="[^\"]+"'
+head -1
+awk -F 'TotalCharacters="' '{ print $2 }'
+sed 's/.\{1\}$//g') ; var2=$(cat $var0
+iconv -c -f UTF-16 -t UTF-8
+grep -Eo 'UncertainCharacters="[^\"]+"'
+head -1
+awk -F 'UncertainCharacters="' '{ print $2 }'
+sed 's/.\{1\}$//g'
+
+
+
+) ; echo $var2"/"$var1
 
 
 
